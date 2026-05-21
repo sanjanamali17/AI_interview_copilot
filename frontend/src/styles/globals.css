@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-dark-900 text-dark-50 font-sans;
+  }
+}
+
+@layer components {
+  .glass-morphism {
+    @apply bg-dark-800/50 backdrop-blur-lg border border-dark-700/50;
+  }
+  
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-400;
+  }
+  
+  .gradient-success {
+    @apply bg-gradient-to-r from-success-600 to-success-400;
+  }
+  
+  .gradient-warning {
+    @apply bg-gradient-to-r from-warning-600 to-warning-400;
+  }
+  
+  .gradient-danger {
+    @apply bg-gradient-to-r from-danger-600 to-danger-400;
+  }
+  
+  .card-primary {
+    @apply glass-morphism rounded-xl p-6 shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply gradient-primary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-dark-700 text-dark-100 px-6 py-3 rounded-lg font-semibold hover:bg-dark-600 transition-colors duration-200;
+  }
+  
+  .score-card {
+    @apply card-primary hover:shadow-2xl transition-shadow duration-300;
+  }
+  
+  .metric-value {
+    @apply text-3xl font-bold text-primary-400;
+  }
+  
+  .metric-label {
+    @apply text-sm text-dark-400 uppercase tracking-wider;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dark-500;
+}
